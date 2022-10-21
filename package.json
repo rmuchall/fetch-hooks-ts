@@ -1,7 +1,7 @@
 {
   "name": "fetch-hooks-ts",
   "version": "0.0.0",
-  "description": "",
+  "description": "fetch-hooks-ts",
   "type": "module",
   "main": "./cjs/index.js",
   "module": "./esm/index.js",
@@ -27,8 +27,13 @@
     "type": "git",
     "url": "git+https://github.com/rmuchall/fetch-hooks-ts.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "fetch",
+    "rest",
+    "client",
+    "hooks"
+  ],
+  "author": "Rob Muchall <rmuchall@protonmail.com>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/rmuchall/fetch-hooks-ts/issues"
