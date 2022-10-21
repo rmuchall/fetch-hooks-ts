@@ -1,5 +1,5 @@
 import t from "tap";
-import {FetchHooks} from "../src/FetchHooks.js";
+import {FetchHooks} from "../src/index.js";
 import {IsValid, MetaValidator} from "meta-validator";
 import express, {Application} from "express";
 import http, {Server as HttpServer} from "http";

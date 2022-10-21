@@ -1,5 +1,5 @@
 import t from "tap";
-import {FetchHooks} from "../src/FetchHooks.js";
+import {FetchHooks} from "../src/index.js";
 
 void t.test("merge two different sources", t => {
     const sourceA: Record<string, string> = {
