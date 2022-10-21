@@ -5,8 +5,8 @@
   "type": "module",
   "main": "./cjs/index.js",
   "browser": "./esm/index.js",
-  "types": "./types/index.d.ts",
   "exports": {
+    "types": "./types/index.d.ts",
     "import": "./esm/index.js",
     "require": "./cjs/index.js"
   },
