@@ -6,7 +6,7 @@
   "main": "./cjs/index.js",
   "module": "./esm/index.js",
   "browser": "./esm/index.js",
-  "types": "./types/types.d.ts",
+  "types": "./types/index.d.ts",
   "sideEffects": false,
   "scripts": {
     "clean": "rimraf ./build",
