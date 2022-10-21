@@ -16,9 +16,7 @@ void t.test("merge two different sources", t => {
     const mergedObject = {...sourceA, ...sourceB};
 
     t.type(mergedHeaders, Headers);
-    for (const key of Object.keys(mergedObject)) {
-        t.equal(mergedHeaders.get(key), mergedObject[key]);
-    }
+    t.match(mergedHeaders, new Headers(mergedObject));
     t.end();
 });
 

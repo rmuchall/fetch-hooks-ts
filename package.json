@@ -4,9 +4,12 @@
   "description": "fetch-hooks-ts",
   "type": "module",
   "main": "./cjs/index.js",
-  "module": "./esm/index.js",
   "browser": "./esm/index.js",
   "types": "./types/index.d.ts",
+  "exports": {
+    "import": "./esm/index.js",
+    "require": "./cjs/index.js"
+  },
   "sideEffects": false,
   "scripts": {
     "clean": "rimraf ./build",
