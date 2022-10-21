@@ -1,6 +1,6 @@
 {
   "name": "fetch-hooks-ts",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "fetch-hooks-ts",
   "type": "module",
   "main": "./cjs/index.js",
