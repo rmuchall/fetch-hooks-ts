@@ -14,7 +14,7 @@
   "scripts": {
     "clean": "rimraf ./build",
     "lint": "eslint --config .eslintrc.cjs ./src ./test",
-    "test": "tap --node-arg=--loader=ts-node/esm",
+    "test": "cross-env-shell TS_NODE_TRANSPILE_ONLY=true tap --node-arg=--loader=ts-node/esm",
     "build": "npm run clean && npm run build:cjs && npm run build:esm",
     "build:cjs": "tsc --project tsconfig-release.json --module commonjs --target es5 --outDir build/cjs",
     "build:esm": "tsc --project tsconfig-release.json --module nodenext --target es2022 --outDir build/esm",
@@ -50,6 +50,7 @@
     "@typescript-eslint/eslint-plugin": "5.40.1",
     "@typescript-eslint/parser": "5.40.1",
     "cpy-cli": "4.2.0",
+    "cross-env": "7.0.3",
     "eslint": "8.25.0",
     "http-status-ts": "1.0.1",
     "meta-controller": "1.0.0",
