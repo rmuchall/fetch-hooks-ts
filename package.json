@@ -4,7 +4,7 @@
   "description": "fetch-hooks-ts",
   "type": "module",
   "main": "./cjs/index.js",
-  "browser": "./esm/index.js",
+  "module": "./esm/index.js",
   "exports": {
     "types": "./types/index.d.ts",
     "import": "./esm/index.js",
