@@ -16,7 +16,7 @@ void t.test("merge two different sources", t => {
     const mergedObject = {...sourceA, ...sourceB};
 
     t.type(mergedHeaders, Headers);
-    t.match(mergedHeaders, new Headers(mergedObject));
+    t.strictSame(mergedHeaders, new Headers(mergedObject));
     t.end();
 });
 

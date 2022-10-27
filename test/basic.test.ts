@@ -43,7 +43,7 @@ t.before(() => {
         @Route(HttpMethod.POST)
         post(@Body() widget: Widget): Widget {
             t.type(widget, Widget);
-            t.match(widget, testWidget);
+            t.same(widget, testWidget);
             return testWidget;
         }
 
@@ -79,7 +79,7 @@ void t.test("get by option", async t => {
     t.equal(response.status, HttpStatus.OK);
     t.equal(response.headers.get("content-type"), "application/json; charset=utf-8");
     const result = await response.json();
-    t.match(result, testWidget);
+    t.same(result, testWidget);
 });
 
 void t.test("get by method", async t => {
@@ -87,7 +87,7 @@ void t.test("get by method", async t => {
     t.equal(response.status, HttpStatus.OK);
     t.equal(response.headers.get("content-type"), "application/json; charset=utf-8");
     const result = await response.json();
-    t.match(result, testWidget);
+    t.same(result, testWidget);
 });
 
 void t.test("post by option", async t => {
@@ -99,7 +99,7 @@ void t.test("post by option", async t => {
     t.equal(response.status, HttpStatus.OK);
     t.equal(response.headers.get("content-type"), "application/json; charset=utf-8");
     const result = await response.json();
-    t.match(result, testWidget);
+    t.same(result, testWidget);
 });
 
 void t.test("post by method", async t => {
@@ -110,7 +110,7 @@ void t.test("post by method", async t => {
     t.equal(response.status, HttpStatus.OK);
     t.equal(response.headers.get("content-type"), "application/json; charset=utf-8");
     const result = await response.json();
-    t.match(result, testWidget);
+    t.same(result, testWidget);
 });
 
 void t.test("put by option", async t => {
@@ -118,7 +118,7 @@ void t.test("put by option", async t => {
     t.equal(response.status, HttpStatus.OK);
     t.equal(response.headers.get("content-type"), "application/json; charset=utf-8");
     const result = await response.json();
-    t.match(result, testWidget);
+    t.same(result, testWidget);
 });
 
 void t.test("put by method", async t => {
@@ -126,7 +126,7 @@ void t.test("put by method", async t => {
     t.equal(response.status, HttpStatus.OK);
     t.equal(response.headers.get("content-type"), "application/json; charset=utf-8");
     const result = await response.json();
-    t.match(result, testWidget);
+    t.same(result, testWidget);
 });
 
 void t.test("delete by option", async t => {
@@ -134,7 +134,7 @@ void t.test("delete by option", async t => {
     t.equal(response.status, HttpStatus.OK);
     t.equal(response.headers.get("content-type"), "application/json; charset=utf-8");
     const result = await response.json();
-    t.match(result, testWidget);
+    t.same(result, testWidget);
 });
 
 void t.test("delete by method", async t => {
@@ -142,5 +142,5 @@ void t.test("delete by method", async t => {
     t.equal(response.status, HttpStatus.OK);
     t.equal(response.headers.get("content-type"), "application/json; charset=utf-8");
     const result = await response.json();
-    t.match(result, testWidget);
+    t.same(result, testWidget);
 });

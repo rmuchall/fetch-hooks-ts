@@ -47,7 +47,7 @@ t.before(() => {
         @Route(HttpMethod.POST, "/json")
         postJson(@Body() widget: Widget): Widget {
             t.type(widget, Widget);
-            t.match(widget, testWidget);
+            t.same(widget, testWidget);
             return widget;
         }
 
@@ -81,7 +81,7 @@ void t.test("json", async t => {
         json: testWidget
     });
     const result = await response.json() as Widget;
-    t.match(result, testWidget);
+    t.same(result, testWidget);
 });
 
 void t.test("queryString", async t => {

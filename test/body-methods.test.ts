@@ -91,14 +91,14 @@ void t.test("arrayBuffer()", async t => {
     const response = await fetchHooks.fetch("http://localhost:4501/body-methods/buffer", {method: HttpMethod.GET});
     const result = await response.arrayBuffer();
     const decoder = new TextDecoder();
-    t.match(JSON.parse(decoder.decode(result)), testWidget);
+    t.same(JSON.parse(decoder.decode(result)), testWidget);
 });
 
 void t.test("blob()", async () => {
     const response = await fetchHooks.fetch("http://localhost:4501/body-methods/buffer", {method: HttpMethod.GET});
     const result = await response.blob();
     const decoder = new TextDecoder();
-    t.match(JSON.parse(decoder.decode(await result.arrayBuffer())), testWidget);
+    t.same(JSON.parse(decoder.decode(await result.arrayBuffer())), testWidget);
 });
 
 /*
@@ -113,7 +113,7 @@ t.test("formData()", async t => {
 void t.test("json()", async t => {
     const response = await fetchHooks.fetch("http://localhost:4501/body-methods/json", {method: HttpMethod.GET});
     const result = await response.json() as Widget;
-    t.match(result, testWidget);
+    t.same(result, testWidget);
 });
 
 void t.test("text()", async t => {

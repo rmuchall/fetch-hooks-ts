@@ -93,7 +93,7 @@ void t.test("prefixUrl", async () => {
     t.equal(response.status, HttpStatus.OK);
     t.equal(response.headers.get("content-type"), "application/json; charset=utf-8");
     const result = await response.json();
-    t.match(result, testWidget);
+    t.same(result, testWidget);
 });
 
 void t.test("jwtToken", async () => {
@@ -137,7 +137,7 @@ void t.test("afterResponseHook", async t => {
     t.equal(response.headers.get("content-type"), "application/json; charset=utf-8");
     t.equal((response as any).testAfterResponseHook, "this-was-set-in-after-response-hook");
     const result = await response.json();
-    t.match(result, testWidget);
+    t.same(result, testWidget);
 });
 
 void t.test("headers", async () => {
