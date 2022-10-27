@@ -26,10 +26,10 @@
     "release": "npm run lint && npm run test && npm run build && npm version patch && npm run copy && npm publish ./build"
   },
   "tap": {
-    "reporter": "terse",
+    "reporter": "spec",
     "node-arg": ["--loader=ts-node/esm", "--no-warnings"],
     "coverage": false,
-    "bail": true,
+    "bail": false,
     "only": false
   },
   "repository": {
