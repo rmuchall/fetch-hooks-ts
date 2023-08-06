@@ -58,21 +58,21 @@ export class FetchHooks {
     fetch(input: RequestInfo, init?: RequestOptions): Promise<Response> {
         const requestInit = this.buildRequestInit(init);
 
-        // prefixUrl?
-        if (this.instanceOptions?.prefixUrl) {
-            if (typeof input === "string") {
+        if (typeof input === "string") {
+            // prefixUrl?
+            if (this.instanceOptions?.prefixUrl) {
                 // Normalize url
                 input = `${this.instanceOptions.prefixUrl}/${input}`.replace(/([^:]\/)\/+/g, "$1");
             }
-        }
 
-        // UnifiedFetch queryStringParams option
-        const queryStringObject = init?.queryString;
-        if (queryStringObject) {
-            const queryString = Object.keys(queryStringObject)
-                .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(queryStringObject[key])}`)
-                .join("&");
-            input = `${input}?${queryString}`;
+            // UnifiedFetch queryStringParams option
+            const queryStringObject = init?.queryString;
+            if (queryStringObject) {
+                const queryString = Object.keys(queryStringObject)
+                    .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(queryStringObject[key])}`)
+                    .join("&");
+                input = `${input}?${queryString}`;
+            }
         }
 
         // Fetch
